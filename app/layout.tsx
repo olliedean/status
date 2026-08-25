@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { FaServer } from "react-icons/fa";
-import Clock from "./Clock";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -29,20 +29,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${outfit.variable} ${jetbrainsMono.variable} font-sans h-full antialiased bg-zinc-950`}
     >
       <body
-        className="max-w-3xl w-full mx-auto text-white"
+        className="max-w-3xl w-full min-h-screen flex flex-col mx-auto text-white"
       >
-        <div
-          className="flex items-center text-zinc-500 border-b-1 border-white/10 py-7 font-mono text-sm"
-        >
-          <div className="flex items-center gap-2">
-            <FaServer />
-            <p>Example Org</p>
-          </div>
-          <div className="ml-auto">
-            <Clock />
-          </div>
-        </div>
-        {children}
+        <Header />
+        <main className="flex-grow mb-7">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

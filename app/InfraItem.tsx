@@ -21,7 +21,7 @@ export default function Card({ title, icon }: Props) {
                 ))}
             </div>
             <div className="text-xs font-sans text-emerald-400 flex flex-1 items-center gap-1">
-                <span className="font-mono text-zinc-400 pr-5 ml-auto">12ms</span>
+                <span className="font-mono font-light text-zinc-500 pr-5 ml-auto">12ms</span>
                 Operational
                 <div className="h-1.5 w-1.5 bg-emerald-400 rounded-full ml-2 inline-block"></div>
             </div>
