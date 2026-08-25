@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Card from "./Card";
+import InfraItem from "./InfraItem";
+import { FaDatabase, FaMemory, FaServer } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -25,6 +27,19 @@ export default function Home() {
           0
         </Card>
       </div>
+
+      <h1 className="font-mono text-sm tracking-tight leading-snug text-zinc-400 mt-9">
+        Infrastructure
+      </h1>
+      <div className="mt-2 bg-zinc-900/50 rounded-lg border-zinc-800 border">
+        <InfraItem title="Web Server" icon={<FaServer />}/>
+        <InfraItem title="Database" icon={<FaDatabase />}/>
+        <InfraItem title="Cache" icon={<FaMemory />}/>
+      </div>
+
+      <h1 className="font-mono text-sm tracking-tight leading-snug text-zinc-400 mt-9">
+        Incidents
+      </h1>
     </main>
   );
 }
